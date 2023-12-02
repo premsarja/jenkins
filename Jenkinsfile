@@ -11,6 +11,9 @@ pipeline {
                 sh echo 'stage two demo'
             }
         }
+        stage('stage three'){
+            steps{
+                sh echo 'stage three demo'
     }    
     
 
