@@ -7,7 +7,7 @@ pipeline {
         stage('stage one') {
             steps {
                 sh ...
-                      echo 'stage one demo'
+                      echo stage one demo
                       echo ${ENV_URL}
                 ...
             }
