@@ -10,7 +10,7 @@ pipeline {
                 sh '''
                       echo stage one demo
                       echo ${ENV_URL}
-                      env
+                      
                    '''
             }
         }
