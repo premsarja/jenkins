@@ -14,7 +14,8 @@ pipeline {
         stage('stage three'){
             steps{
                 sh echo 'stage three demo'
-    }    
-    
+            }           
+        }    
+    }
 
 }
