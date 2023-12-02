@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment{
           ENV_URL="google.com"  
+          SSH_PASSWD= credentials('SSH_PASSWD')
     }
     stages {
         stage('stage one') {
@@ -9,6 +10,7 @@ pipeline {
                 sh '''
                       echo stage one demo
                       echo ${ENV_URL}
+                      env
                    '''
             }
         }
