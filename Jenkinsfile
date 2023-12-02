@@ -10,6 +10,7 @@ pipeline {
                 sh '''
                       echo stage one demo
                       echo ${ENV_URL}
+                      env  #just to ensure SSH_PASSWD TO SEE we updated as env
                       
                    '''
             }
