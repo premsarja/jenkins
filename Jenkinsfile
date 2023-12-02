@@ -6,10 +6,10 @@ pipeline {
     stages {
         stage('stage one') {
             steps {
-                sh ...
+                sh '''
                       echo stage one demo
                       echo ${ENV_URL}
-                ...
+                   '''
             }
         }
         stage('stage two') {
