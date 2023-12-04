@@ -22,9 +22,8 @@ pipeline {
             }
             steps {
                 sh '''
-                sh echo URL IS ${ENV_URL}
-                sh echo 'stage two demo
                 sh echo batch going is ${BATCH}
+                sh echo URL IS ${ENV_URL}
 
                 '''
             }
