@@ -22,9 +22,8 @@ pipeline {
                       echo ${ENV_URL}
                       env  #just to ensure SSH_PASSWD TO SEE we updated as env env is system command to see what all env is there
                       
-                   '''
+                 '''
             }
-
 
         }
         stage('stage two') {
@@ -46,10 +45,10 @@ pipeline {
                 ENV_URL = "FB.com"
             }
 
-            steps {
-                sh "echo stage three demo"
-                sh  echo URL IS "${ENV_URL}"
-                sh echo  batch  is "${BATCH}"
+            steps { 
+               sh 'echo "stage three demo"'
+               sh "echo 'URL IS ${ENV_URL}'"
+               sh "echo 'batch is ${BATCH}'"
 
             }
         }
