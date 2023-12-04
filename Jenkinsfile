@@ -4,6 +4,8 @@ pipeline {
           ENV_URL="google.com"  
           SSH_PASSWD= credentials('SSH_PASSWD')
     }
+    triggers{ cron('*/1 * * * 1-5') }
+
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
         text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
