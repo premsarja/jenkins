@@ -24,6 +24,8 @@ pipeline {
                       
                    '''
             }
+
+
         }
         stage('stage two') {
             environment {
@@ -39,8 +41,16 @@ pipeline {
             }
         }
         stage('stage three') {
+            environment {
+                BATCH = "B55"
+                ENV_URL = "FB.com"
+            }
+
             steps {
                 sh "echo stage three demo"
+                sh  echo URL IS "${ENV_URL}"
+                sh echo  batch  is "${BATCH}"
+
             }
         }
     }
