@@ -14,17 +14,19 @@ pipeline {
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
 
+    tools {
+        maven 'apache-maven-3.0.1'
+    } 
     stages {
         stage('stage one') {
             steps {
                 sh '''
                       echo stage one demo
                       echo ${ENV_URL}
+                      mvn clean
                       env  #just to ensure SSH_PASSWD TO SEE we updated as env env is system command to see what all env is there
-                      
                  '''
             }
-
         }
         stage('stage two') {
             environment {
@@ -35,7 +37,6 @@ pipeline {
                 sh '''
                 echo URL IS "${ENV_URL}"
                 echo batch  is "${BATCH}"
-
                 '''
             }
         }
@@ -44,7 +45,6 @@ pipeline {
                 BATCH = "B55"
                 ENV_URL = "FB.com"
             }
-
             steps { 
                sh 'echo "stage three demo"'
                sh "echo URL IS ${ENV_URL}"
