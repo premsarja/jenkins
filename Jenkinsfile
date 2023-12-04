@@ -20,12 +20,9 @@ pipeline {
                 BATCH = "B55"
                 ENV_URL = "FB.com"
             }
-            
-            }
             steps {
                 sh '''
-
-                sh  "echo URL IS ${ENV_URL}"
+                sh  echo URL IS "${ENV_URL}"
                 sh "echo 'stage two demo'
                 sh echo batch going is "${BATCH}"
                 '''
@@ -33,7 +30,7 @@ pipeline {
         }
         stage('stage three') {
             steps {
-                sh "echo 'stage three demo'"
+                sh "echo stage three demo"
             }
         }
     }
