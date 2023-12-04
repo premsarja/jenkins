@@ -23,7 +23,7 @@ pipeline {
                 sh '''
                       echo stage one demo
                       echo ${ENV_URL}
-                      mvn clean
+                      mvn -v
                       env  #just to ensure SSH_PASSWD TO SEE we updated as env env is system command to see what all env is there
                  '''
             }
