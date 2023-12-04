@@ -25,6 +25,7 @@ pipeline {
                       echo ${ENV_URL}
                       mvn -v
                       env  #just to ensure SSH_PASSWD TO SEE we updated as env env is system command to see what all env is there
+                      sleep 10
                  '''
             }
         }
@@ -37,6 +38,7 @@ pipeline {
                 sh '''
                 echo URL IS "${ENV_URL}"
                 echo batch  is "${BATCH}"
+                sleep 10
                 '''
             }
         }
@@ -49,6 +51,7 @@ pipeline {
                sh 'echo "stage three demo"'
                sh "echo URL IS ${ENV_URL}"
                sh "echo batch is ${BATCH}"
+               sleep 10
 
             }
         }
