@@ -4,7 +4,7 @@ pipeline {
           ENV_URL="google.com"  
           SSH_PASSWD= credentials('SSH_PASSWD')
     }
-    triggers{ cron('*/1 * * * 1-5') }
+    // triggers{ cron('*/1 * * * 1-5') }
 
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
@@ -47,8 +47,8 @@ pipeline {
 
             steps { 
                sh 'echo "stage three demo"'
-               sh "echo 'URL IS ${ENV_URL}'"
-               sh "echo 'batch is ${BATCH}'"
+               sh "echo URL IS ${ENV_URL}"
+               sh "echo batch is ${BATCH}"
 
             }
         }
