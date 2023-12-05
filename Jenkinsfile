@@ -28,6 +28,8 @@ pipeline {
                  '''
             }
         }
+        stage('parallel demo') {
+            parallel{
         stage('stage two') {
             environment {
                 BATCH = "B55"
