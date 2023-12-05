@@ -22,6 +22,14 @@ pipeline {
         stages {
            stage('Stage One') {
               steps {
+                                script {
+                    try {
+                        checkout scm
+                    } catch (Exception e) {
+                        echo "Failed to checkout code: ${e}"
+                        currentBuild.result = 'FAILURE'
+                        error("Failed to checkout code")
+                    }
                  sh '''
                     echo "Stage one demo"
                     echo "${ENV_URL}"
