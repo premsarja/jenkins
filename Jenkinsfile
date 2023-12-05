@@ -19,15 +19,14 @@ pipeline {
         maven 'maven-3.8.6'
     }
 
-    stages {
-        stage('Stage One') {
-            steps {
-                sh '''
+        stages {
+           stage('Stage One') {
+              steps {
+                 sh '''
                     echo "Stage one demo"
                     echo "${ENV_URL}"
                     mvn -v
                     env  # Display all environment variables
-                    sleep 60
                 '''
             }
         }
@@ -43,7 +42,7 @@ pipeline {
                         sh '''
                             echo "URL IS ${ENV_URL}"
                             echo "Batch is ${BATCH}"
-                            sleep 60
+                            
                         '''
                     }
                 }
@@ -57,7 +56,7 @@ pipeline {
                         sh 'echo "Stage three demo"'
                         sh "echo URL IS ${ENV_URL}"
                         sh "echo Batch is ${BATCH}"
-                        sleep 60
+                        
                     }
                 }
             }
