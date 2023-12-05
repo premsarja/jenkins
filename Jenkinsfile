@@ -18,6 +18,7 @@ pipeline {
     } 
     stages {
         stage('stage one') {
+<<<<<<< HEAD
             steps {
                 sh '''
                       echo stage one demo
@@ -47,6 +48,37 @@ pipeline {
                                 environment {
                                        BATCH = "B55"
                                       ENV_URL = "FB.com"
+=======
+            steps {
+                sh '''
+                      echo stage one demo
+                      echo ${ENV_URL}
+                      mvn -v
+                      env  #just to ensure SSH_PASSWD TO SEE we updated as env env is system command to see what all env is there
+                      sleep 60
+                 '''
+            }
+        }
+        stage('parallel demo') {
+            parallel{
+        stage('stage two') {
+            environment {
+                BATCH = "B55"
+                ENV_URL = "FB.com"
+            }
+            steps {
+                sh '''
+                echo URL IS "${ENV_URL}"
+                echo batch  is "${BATCH}"
+                sleep 60
+                '''
+            }
+        }
+        stage('stage three') {
+            environment {
+                BATCH = "B55"
+                ENV_URL = "FB.com"
+>>>>>>> parent of 2edf2ba... added parallel for 2nd step
             }
             steps { 
                sh 'echo "stage three demo"'
@@ -57,5 +89,9 @@ pipeline {
             }
         }
     }
+<<<<<<< HEAD
         
 }            
+=======
+}
+>>>>>>> parent of 2edf2ba... added parallel for 2nd step
