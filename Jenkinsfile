@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment{
           ENV_URL="google.com"  
-          PASSWD = credentials('PASSWD')
+          PASSWD=credentials('PASSWD')
     }
     // triggers{ cron('*/1 * * * 1-5') }
 
