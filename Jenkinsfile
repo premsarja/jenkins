@@ -28,6 +28,7 @@ pipeline {
                     echo "Stage one demo"
                     echo "${ENV_URL}"
                     mvn -v
+                    hostname
                     env  # Display all environment variables
                 '''
             }
