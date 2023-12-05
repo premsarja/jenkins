@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent ws
 
     environment {
         ENV_URL = "google.com"
