@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment{
           ENV_URL="google.com"  
-         // SSH_PASSWD= credentials('SSH_PASSWD')
+          SSH_PASSWD= credentials('SSH_PASSWD')
     }
     // triggers{ cron('*/1 * * * 1-5') }
 
@@ -11,7 +11,7 @@ pipeline {
         text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
-        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+        password(name: 'SSH_PASSWD', defaultValue: 'SECRET', description: 'Enter a password')
     }
 
     tools {
