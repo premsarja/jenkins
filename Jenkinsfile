@@ -1,14 +1,11 @@
 pipeline {
-    agent {
-        label 'ws'
-    }
+    agent any
     environment {
         ENV_URL = "google.com"
         PASSWD = credentials('PASSWD')
         //Replace 'PASSWD_ID' with the correct ID of the credential in Jenkins
-        
     }
-
+    
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
         text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
