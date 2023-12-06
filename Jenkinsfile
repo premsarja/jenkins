@@ -1,8 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        label 'ws'
+    }
     environment {
         ENV_URL = "google.com"
-        SSH_CRED = credentials('SSH_CRED')
+        //SSH_CRED = credentials('SSH_CRED')
         //Replace 'PASSWD_ID' with the correct ID of the credential in Jenkins
     }
     
