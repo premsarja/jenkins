@@ -1,10 +1,9 @@
 pipeline {
-    agent {
-        label 'ws'
+    agent any
     }
     environment {
         ENV_URL = "google.com"
-        PAT =credentials('PAT')
+        PASS =credentials('PASS')
         //Replace 'PASSWD_ID' with the correct ID of the credential in Jenkins
     }
     
