@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'ws'
-    }
+    agent any
     environment {
         ENV_URL = "google.com"
         PASS =credentials('PASS')
