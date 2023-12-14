@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         ENV_URL = "google.com"
-        SSHCRED =credentials('SSHCRED')
+        PASSWORD =credentials('PASSWORD')
         //Replace 'PASSWD_ID' with the correct ID of the credential in Jenkins
     }
     
