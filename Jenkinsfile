@@ -68,6 +68,9 @@ pipeline {
     agent any
     stages {
         stage('Example') {
+            when {
+                user: 'prem' 
+            }
             input {
                 message "Should we continue?"
                 ok "Yes, we should."
