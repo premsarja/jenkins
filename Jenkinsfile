@@ -68,8 +68,6 @@ pipeline {
     agent any
     stages {
         stage('Example') {
-            when {
-                user: 'prem' 
             }
             input {
                 message "Should we continue?"
@@ -85,3 +83,7 @@ pipeline {
         }
     }
 }
+sh "${scannerHome}/bin/sonar-scanner -Dsonar.login=<YOUR_AUTH_TOKEN>"
+
+
+squ_f304202a9ba3ead7c54870494e82123f0cb20e73
